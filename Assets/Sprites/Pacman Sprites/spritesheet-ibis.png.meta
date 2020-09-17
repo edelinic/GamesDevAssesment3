@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 5d83ce02d3a7ba4448bf7217df2fd930
+guid: e477323a1099e0c4bb0c281baacd47f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8060109206237204590
-    second: spritesheet-echidna-scared_0
+      213: 420536646585976179
+    second: spritesheet-ibis_0
   - first:
-      213: 5773014272865007008
-    second: spritesheet-echidna-scared_1
+      213: -2376220005352835368
+    second: spritesheet-ibis_1
   - first:
-      213: 1499785655571650910
-    second: spritesheet-echidna-scared_2
+      213: -2811925753149982146
+    second: spritesheet-ibis_2
+  - first:
+      213: -8663130748311377812
+    second: spritesheet-ibis_3
+  - first:
+      213: -4438339355623891065
+    second: spritesheet-ibis_4
+  - first:
+      213: 4642323259580280049
+    second: spritesheet-ibis_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -95,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet-echidna-scared_0
+      name: spritesheet-ibis_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e60df986e924bdf60800000000000000
-      internalID: 8060109206237204590
+      spriteID: 3758aca1adb06d500800000000000000
+      internalID: 420536646585976179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-echidna-scared_1
+      name: spritesheet-ibis_1
       rect:
         serializedVersion: 2
         x: 32
@@ -130,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a5f069f4eddd1050800000000000000
-      internalID: 5773014272865007008
+      spriteID: 8d674c0be78f50fd0800000000000000
+      internalID: -2376220005352835368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet-echidna-scared_2
+      name: spritesheet-ibis_2
       rect:
         serializedVersion: 2
         x: 64
@@ -151,8 +160,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5913978b1f40d410800000000000000
-      internalID: 1499785655571650910
+      spriteID: e3af8bcfc680af8d0800000000000000
+      internalID: -2811925753149982146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-ibis_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68e220db7066c780800000000000000
+      internalID: -8663130748311377812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-ibis_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78fd6631fd9d762c0800000000000000
+      internalID: -4438339355623891065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet-ibis_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fce0d39868dc6040800000000000000
+      internalID: 4642323259580280049
       vertices: []
       indices: 
       edges: []
@@ -160,7 +232,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7c1b4c05a2b72404eaf8431b0ce51414
+    spriteID: 358014425d9a8654086455127bf7805c
     internalID: 0
     vertices: []
     indices: 
