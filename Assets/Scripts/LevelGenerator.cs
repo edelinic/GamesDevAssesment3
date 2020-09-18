@@ -62,13 +62,19 @@ public class LevelGenerator : MonoBehaviour
     for (int j = 0; j < 14; j++)
         {
             for (int i = 0; i < 14; i++ ){
-                GameObject wallClone = Instantiate(walls[levelMap[j,i]], new Vector3(i * 1.0F, j * -1.0F, 0 ), Quaternion.Euler(0, 0, -90 * rotationMap[j,i]));
-                wallClone.transform.parent = mapContainer.transform;
+                //GameObject wallClone = Instantiate(walls[levelMap[j,i]], new Vector3(i, -j, 0 ), Quaternion.Euler(0, 0, -90 * rotationMap[j,i]));
+                GameObject wallClone = Instantiate(walls[levelMap[j,i]], new Vector3(0, 0, 0 ), Quaternion.Euler(0, 0, -90 * rotationMap[j,i]));
                 wallClone.name = "WallClone[" + i + "," + j + "]";
+                wallClone.transform.SetParent(mapContainer.transform);
+                wallClone.transform.localPosition = new Vector3(i, -j, 0 );
+
             }
         }
 
-    //Instantiate(mapContainer,  new Vector3(5, 5, 0 ), Quaternion.identity );
+        mapContainer.transform.position = new Vector3(-14,14,0);
+
+        GameObject quadrant2 = Instantiate(mapContainer, new Vector3(0,0,0), Quaternion.Euler(0, 180, 0));
+        quadrant2.transform.position = new Vector3 (13, 14, 0);
 
     }
 
