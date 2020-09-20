@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public GameObject mapContainer;
     public GameObject wall0;
     public GameObject wall1;
     public GameObject wall2;
@@ -13,7 +13,6 @@ public class LevelGenerator : MonoBehaviour
     public GameObject wall5;
     public GameObject wall6;
     public GameObject wall7;
-
 
     int[,] levelMap =
     {
@@ -49,38 +48,74 @@ public class LevelGenerator : MonoBehaviour
     {0,0,0,0,0,1,0,3,3,0,0,0,0,0},
     {0,0,0,0,0,1,0,3,3,0,0,0,0,0},
     {0,0,2,2,2,2,0,3,2,0,1,0,0,0},
-    {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+    {0,0,0,0,0,0,0,0,0,0,1,0,0,0},
     };
 
     // Start is called before the first frame update
     void Start()
     {
-    
-    GameObject[] walls = {wall0, wall1, wall2, wall3, wall4, wall5, wall6, wall7};
+        generateQuadrants();
 
-    //instantiate quadrant
-    for (int j = 0; j < 14; j++)
-        {
-            for (int i = 0; i < 14; i++ ){
-                //GameObject wallClone = Instantiate(walls[levelMap[j,i]], new Vector3(i, -j, 0 ), Quaternion.Euler(0, 0, -90 * rotationMap[j,i]));
-                GameObject wallClone = Instantiate(walls[levelMap[j,i]], new Vector3(0, 0, 0 ), Quaternion.Euler(0, 0, -90 * rotationMap[j,i]));
-                wallClone.name = "WallClone[" + i + "," + j + "]";
-                wallClone.transform.SetParent(mapContainer.transform);
-                wallClone.transform.localPosition = new Vector3(i, -j, 0 );
+
+    }
+
+    void generateQuadrants(){
+        //create all 4 quadrants 
+        for (int i = 1; i <= 4; i++){
+            GameObject quadrant= createQuadrant(i);
+
+            int caseSwitch = i;
+            switch(caseSwitch){
+                case 2:
+                    quadrant.transform.Translate(-1,0,0);
+                    quadrant.transform.Rotate(0.0f, 180f, 0f);
+                    break;
+                case 3: 
+                    quadrant.transform.Translate(0,1,0);
+                    quadrant.transform.Rotate(180f, 0f, 0f);
+                    break;
+                case 4: 
+                    quadrant.transform.Translate(-1,1,0);
+                    quadrant.transform.Rotate(180f, 180f, 0f);
+                    break;
+                default:
+                    break;
 
             }
+
         }
 
-        mapContainer.transform.position = new Vector3(-14,14,0);
-
-        GameObject quadrant2 = Instantiate(mapContainer, new Vector3(0,0,0), Quaternion.Euler(0, 180, 0));
-        quadrant2.transform.position = new Vector3 (13, 14, 0);
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    GameObject createQuadrant(int quadrantNumber){   //position is of left bottom corner
+
         
+        GameObject[] walls = {wall0, wall1, wall2, wall3, wall4, wall5, wall6, wall7};
+
+        GameObject quadrant = new GameObject("quadrant" + quadrantNumber);
+
+        //determine size of quadrant based on quadrantNumber
+        int mapSizeX = 14;
+        int mapSizeY = (quadrantNumber > 2) ? 14: 15;
+
+        //instantiate quadrant
+        for (int j = 0; j < mapSizeY; j++)
+            {
+                for (int i = 0; i < mapSizeX; i++ ){
+                    
+                    //instantiate wall piece
+                    GameObject wallClone = Instantiate(walls[levelMap[j,i]], new Vector3(0,0,0), Quaternion.Euler(0, 0, -90 * rotationMap[j,i]));
+                    wallClone.transform.SetParent(quadrant.transform);
+                    wallClone.transform.localPosition = new Vector3(i - (mapSizeX), -j + (mapSizeY), 0 );
+
+                    wallClone.name = "WallClone[" + i + "," + j + "]"; //rename object
+
+                }
+            }
+
+        return quadrant;
+
     }
+  
+    
 }
