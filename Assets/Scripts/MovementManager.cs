@@ -16,7 +16,7 @@ public class MovementManager : MonoBehaviour
     {
        tweener = GetComponent<Tweener>();
 
-       item.transform.position = new Vector3 (-13,14,0);
+       item.transform.position = new Vector3 (-13,14,2);
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class MovementManager : MonoBehaviour
             directionVector = Vector3.left ;
             animatorController.SetTrigger("LeftParam");
             };
-        if (timer > 7.5f) { 
+        if (timer > 7.25f) { 
             directionVector = Vector3.up ;
             animatorController.SetTrigger("UpParam");
             };
