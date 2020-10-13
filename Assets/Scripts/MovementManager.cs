@@ -23,28 +23,15 @@ public class MovementManager : MonoBehaviour
     void Update()
     {
 
-        //increment timer
-        timer += Time.deltaTime;
+        // //increment timer
+        // timer += Time.deltaTime;
         
-        Vector3 directionVector = Vector3.right;
-        float directionDuration = 0.5f;
+        // Vector3 directionVector = Vector3.right;
+        // float directionDuration = 0.5f;
 
-        if (timer > 2.5f){ 
-            directionVector = Vector3.down; 
-            animatorController.SetTrigger("DownParam");
-            };
-        if (timer > 4.5f) { 
-            directionVector = Vector3.left ;
-            animatorController.SetTrigger("LeftParam");
-            };
-        if (timer > 7.25f) { 
-            directionVector = Vector3.up ;
-            animatorController.SetTrigger("UpParam");
-            };
-        
-        if (timer < 9.5f) {
-            Vector3 endPos =  item.transform.position + directionVector;
-            tweener.addTween(item.transform, item.transform.position, endPos, directionDuration);
+        // Vector3 endPos =  item.transform.position + directionVector;
+        // tweener.addTween(item.transform, item.transform.position, endPos, directionDuration);
+
         }
     }
 
